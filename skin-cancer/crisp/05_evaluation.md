@@ -92,7 +92,7 @@ Both are within the range reported for dermatologists, who are often cited at ab
 
 | Date | Who | Decision | Conditions |
 |---|---|---|---|
-| 2026-10-01 | Project owner (dantongyu) | **Approved: local educational demo** | Labelled 'prototype, not clinically reviewed'; local only; PH2 images not published; no real-patient use |
+| 2026-10-01 | Project owner (dantongyu) | **Approved: local educational demo** (scope clarified the same day: personal demo for self + a few collaborators, no student use) | Labelled 'prototype, not clinically reviewed'; local only; PH2 images not published; no real-patient use |
 
 ## 6. Testbed and in-vivo
 - **Testbed:** the local web demo on the held-out cases, which never influenced training, is the testbed. The PH2 external result (AUC 0.83) is the closest thing to a production-like test.

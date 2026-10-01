@@ -25,8 +25,10 @@
 | 2026-10-01 | 1 | 5 → 6 | Holdout: derm D3c AUC 0.847, PH2 0.830; S1 not confirmed for automated TDS; clinical → fixed count rule; owner approved local demo |
 | 2026-10-01 | 1 | 6 deployed | Local Streamlit demo (app/demo.py); parity verified; 0 app exceptions |
 | 2026-10-01 | 1→2 | 6 → 1 | Loop closed: lessons in 01 v1.3 (measurement bottleneck, screening false alarms, blind spots) |
+| 2026-10-01 | 2 | — | Scope clarified by owner: personal demo for self + a few collaborators; no student use |
 
 ## Open human checkpoints
-- Clinical content review by a dermatologist (required before use with real students).
-- Iteration 2: user to confirm reformulation (e.g. student-entered ABCD scores) before Stage 1 re-runs.
+- (descoped 2026-10-01) Dermatologist review: not required. The owner confirmed the demo is for personal use with a few collaborators, not for students.
+- Iteration 2 (optional): user to decide whether to continue.
+- Sharing with collaborators: screen-share or each collaborator runs it locally with their own data copies. Hosting on a network/public URL would be a new deployment action needing explicit approval. PH2 data must not be passed on.
 - (resolved) Stage 2 data access; Stage 5 owner sign-off 2026-10-01.

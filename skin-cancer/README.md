@@ -1,6 +1,6 @@
 # Explainable ABCD Skin-Lesion Teaching Project
 
-> **Educational use only.** This project is not a medical device and must not be
+> **Research demo** for the author and collaborators. Not a medical device; must not be
 > used to diagnose or manage real patients.
 
 The project tests and confirms the **ABCD rule** for melanoma detection. It covers two

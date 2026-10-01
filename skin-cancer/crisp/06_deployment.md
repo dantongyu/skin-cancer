@@ -54,7 +54,8 @@ Owner: project owner (dantongyu). There is no separate engineering team; this is
 
 ## 5. Rollout
 - **Status:** running locally for the project owner (pilot).
-- **Next step:** a dermatologist reviews about 20 walk-throughs (01 §4c) before any use with students. A student pilot (pre/post quiz) needs a curriculum owner and an ethics decision. Each of these is a separate explicit approval.
+- **Audience (owner, 2026-10-01):** the owner and a few collaborators, as a research demo. No student use is planned, so the dermatologist review and student pilot are descoped.
+- **Sharing:** demo it by screen-share, or each collaborator runs it locally with their own downloads (ISIC/HAM10000 are CC-BY-NC, so non-commercial use is fine). **Do not pass on PH2 files** (no redistribution); collaborators can obtain PH2 themselves. Exposing the app on a network or a public URL would be a new deployment step and needs explicit approval.
 
 ## 6. Lessons learned → iteration 2 (fed into 01 v1.3)
 1. **Measurement, not the clinical rule, is the bottleneck.** Expert A and C discriminate (AUC 0.86 / 0.87), but automated C (κ ≤ 0.23) and B (no ground truth) don't. Published TDS cut-offs fail on automated scores (sensitivity 8%). Options for iteration 2:
