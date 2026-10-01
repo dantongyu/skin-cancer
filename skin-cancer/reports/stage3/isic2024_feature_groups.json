@@ -1,0 +1,113 @@
+{
+  "ABCD_CORE": {
+    "A": [
+      "tbp_lv_symm_2axis",
+      "tbp_lv_radial_color_std_max"
+    ],
+    "B": [
+      "tbp_lv_norm_border",
+      "tbp_lv_area_perim_ratio"
+    ],
+    "C": [
+      "tbp_lv_norm_color",
+      "tbp_lv_deltaLBnorm"
+    ],
+    "D": [
+      "clin_size_long_diam_mm"
+    ]
+  },
+  "UGLY": [
+    "tbp_lv_symm_2axis_pz",
+    "tbp_lv_radial_color_std_max_pz",
+    "tbp_lv_norm_border_pz",
+    "tbp_lv_area_perim_ratio_pz",
+    "tbp_lv_norm_color_pz",
+    "tbp_lv_deltaLBnorm_pz",
+    "clin_size_long_diam_mm_pz"
+  ],
+  "CONTEXT_NUM": [
+    "age_approx"
+  ],
+  "CONTEXT_CAT": [
+    "sex",
+    "anatom_site_general"
+  ],
+  "BENCHMARK": [
+    "age_approx",
+    "clin_size_long_diam_mm",
+    "clin_size_long_diam_mm_pz",
+    "n_lesions_patient",
+    "tbp_lv_A",
+    "tbp_lv_Aext",
+    "tbp_lv_B",
+    "tbp_lv_Bext",
+    "tbp_lv_C",
+    "tbp_lv_Cext",
+    "tbp_lv_H",
+    "tbp_lv_Hext",
+    "tbp_lv_L",
+    "tbp_lv_Lext",
+    "tbp_lv_areaMM2",
+    "tbp_lv_area_perim_ratio",
+    "tbp_lv_area_perim_ratio_pz",
+    "tbp_lv_color_std_mean",
+    "tbp_lv_deltaA",
+    "tbp_lv_deltaB",
+    "tbp_lv_deltaL",
+    "tbp_lv_deltaLB",
+    "tbp_lv_deltaLBnorm",
+    "tbp_lv_deltaLBnorm_pz",
+    "tbp_lv_dnn_lesion_confidence",
+    "tbp_lv_eccentricity",
+    "tbp_lv_location",
+    "tbp_lv_location_simple",
+    "tbp_lv_minorAxisMM",
+    "tbp_lv_nevi_confidence",
+    "tbp_lv_norm_border",
+    "tbp_lv_norm_border_pz",
+    "tbp_lv_norm_color",
+    "tbp_lv_norm_color_pz",
+    "tbp_lv_perimeterMM",
+    "tbp_lv_radial_color_std_max",
+    "tbp_lv_radial_color_std_max_pz",
+    "tbp_lv_stdL",
+    "tbp_lv_stdLExt",
+    "tbp_lv_symm_2axis",
+    "tbp_lv_symm_2axis_angle",
+    "tbp_lv_symm_2axis_pz",
+    "tbp_lv_x",
+    "tbp_lv_y",
+    "tbp_lv_z",
+    "tbp_tile_type",
+    "tbp_lv_location"
+  ],
+  "DNN_benchmark_only": [
+    "tbp_lv_nevi_confidence",
+    "tbp_lv_dnn_lesion_confidence"
+  ],
+  "EXCLUDED": {
+    "lesion_id": "LEAK: present on 100% of malignant vs 5.4% of benign crops (02 \u00a73)",
+    "iddx_full": "LEAK: diagnosis",
+    "iddx_1": "LEAK: diagnosis",
+    "iddx_2": "LEAK: diagnosis",
+    "iddx_3": "LEAK: diagnosis",
+    "iddx_4": "LEAK: diagnosis",
+    "iddx_5": "LEAK: diagnosis",
+    "mel_mitotic_index": "LEAK: histopathology",
+    "mel_thick_mm": "LEAK: histopathology",
+    "attribution": "SHORTCUT: institution, not known at bedside; robustness strata only",
+    "copyright_license": "SHORTCUT: proxy for institution",
+    "image_type": "constant",
+    "isic_id": "identifier",
+    "patient_id": "grouping key only"
+  },
+  "TARGETS": [
+    "y_melanoma",
+    "y_malignant"
+  ],
+  "EVAL_ONLY": [
+    "strong_label",
+    "attribution",
+    "iddx_3"
+  ]
+}

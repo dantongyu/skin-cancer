@@ -6,3 +6,8 @@ __pycache__/
 *.jpg
 *.png
 !reports/**/*.png
+*.parquet
+*.npy
+*.joblib
+*.pt
+reports/stage4/isic2024_split.csv

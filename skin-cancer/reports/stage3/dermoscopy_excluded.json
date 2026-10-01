@@ -1,0 +1,7 @@
+{
+  "dx": "TARGET source",
+  "dx_type": "LEAK: histo means the lesion was excised (suspicious)",
+  "dataset": "SHORTCUT: source collection/device (MoleMax \u2248 follow-up nevi); robustness strata only",
+  "lesion_id": "grouping key only",
+  "image_id": "identifier"
+}

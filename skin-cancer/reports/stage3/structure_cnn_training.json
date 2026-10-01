@@ -1,0 +1,123 @@
+{
+  "n_train": 2075,
+  "n_val": 519,
+  "epochs": 8,
+  "best_epoch_by_mean_val_auc": 7,
+  "device": "mps",
+  "validation": {
+    "pigment_network": {
+      "val_auc": 0.835,
+      "val_prevalence": 282,
+      "threshold": 0.5,
+      "youden_J": 0.536,
+      "sens": 0.777,
+      "spec": 0.759
+    },
+    "globules": {
+      "val_auc": 0.847,
+      "val_prevalence": 120,
+      "threshold": 0.48,
+      "youden_J": 0.592,
+      "sens": 0.75,
+      "spec": 0.842
+    },
+    "streaks": {
+      "val_auc": 0.907,
+      "val_prevalence": 20,
+      "threshold": 0.39,
+      "youden_J": 0.714,
+      "sens": 0.9,
+      "spec": 0.814
+    },
+    "negative_network": {
+      "val_auc": 0.851,
+      "val_prevalence": 36,
+      "threshold": 0.67,
+      "youden_J": 0.61,
+      "sens": 0.694,
+      "spec": 0.915
+    },
+    "milia_like_cyst": {
+      "val_auc": 0.62,
+      "val_prevalence": 135,
+      "threshold": 0.5,
+      "youden_J": 0.222,
+      "sens": 0.652,
+      "spec": 0.57
+    }
+  },
+  "training_log": [
+    {
+      "epoch": 0,
+      "train_loss": 0.9448787374668811,
+      "val_auc_pigment_network": 0.8703,
+      "val_auc_globules": 0.7986,
+      "val_auc_streaks": 0.7819,
+      "val_auc_negative_network": 0.7664,
+      "val_auc_milia_like_cyst": 0.5934
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.9721075729576938,
+      "val_auc_pigment_network": 0.7062,
+      "val_auc_globules": 0.6728,
+      "val_auc_streaks": 0.8647,
+      "val_auc_negative_network": 0.6626,
+      "val_auc_milia_like_cyst": 0.6061
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9581213105443013,
+      "val_auc_pigment_network": 0.6578,
+      "val_auc_globules": 0.705,
+      "val_auc_streaks": 0.8758,
+      "val_auc_negative_network": 0.5904,
+      "val_auc_milia_like_cyst": 0.5547
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.9531668494695641,
+      "val_auc_pigment_network": 0.6639,
+      "val_auc_globules": 0.6575,
+      "val_auc_streaks": 0.843,
+      "val_auc_negative_network": 0.6373,
+      "val_auc_milia_like_cyst": 0.5813
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.895082381891917,
+      "val_auc_pigment_network": 0.7887,
+      "val_auc_globules": 0.7855,
+      "val_auc_streaks": 0.8683,
+      "val_auc_negative_network": 0.7261,
+      "val_auc_milia_like_cyst": 0.5809
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8149268048642629,
+      "val_auc_pigment_network": 0.8292,
+      "val_auc_globules": 0.824,
+      "val_auc_streaks": 0.8927,
+      "val_auc_negative_network": 0.8214,
+      "val_auc_milia_like_cyst": 0.5907
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.7416980456731406,
+      "val_auc_pigment_network": 0.8152,
+      "val_auc_globules": 0.8409,
+      "val_auc_streaks": 0.8845,
+      "val_auc_negative_network": 0.8532,
+      "val_auc_milia_like_cyst": 0.6205
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.687306418361434,
+      "val_auc_pigment_network": 0.8353,
+      "val_auc_globules": 0.8468,
+      "val_auc_streaks": 0.9074,
+      "val_auc_negative_network": 0.8508,
+      "val_auc_milia_like_cyst": 0.6196
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "spearman_with_long_diameter": {
+    "tbp_lv_symm_2axis": -0.029,
+    "tbp_lv_norm_border": 0.186,
+    "tbp_lv_area_perim_ratio": 0.436,
+    "tbp_lv_radial_color_std_max": 0.478,
+    "tbp_lv_norm_color": 0.513
+  }
+}

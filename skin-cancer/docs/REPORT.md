@@ -1,6 +1,6 @@
 # Project Report: Testing the ABCD Rule for Explainable Melanoma Teaching
 
-**Iteration 1 · Stages 1–2 complete · 2026-10-01**
+**Iteration 1 complete (Stages 1–6) · 2026-10-01**
 
 > Educational project. Not for clinical use. Numbers are from the saved outputs in
 > `reports/stage2/` and are reproducible with the commands in the README.
@@ -124,7 +124,32 @@ Inter-observer agreement on asymmetry is only fair to moderate (κ 0.35–0.49;
 Rodríguez-Lomba 2022). So a κ of about 0.4 between our measurements and experts would
 match human-level agreement.
 
-## 6. Next steps
+## 6. Iteration 1 results (Stages 3–6)
+
+**Measurement (Stage 3).** A/B/C/D are extracted automatically from dermoscopic images:
+- **A** matches the PH2 experts at κ 0.40 (human inter-observer range 0.35–0.49).
+- **C** is weak (κ ≤ 0.23; red and white unreliable).
+- **B** has no public ground truth.
+- **D** uses learned detectors (ResNet18, Task 2 validation AUC 0.84–0.91; PH2 dots/globules κ 0.42). These replaced hand-built detectors that scored AUC 0.33–0.68.
+
+**Holdout results (Stages 4–5; scored once, 95% CI)**
+
+| | AUC |
+|---|---|
+| Fixed Stolz TDS, automated scores | 0.64 [0.58, 0.69] |
+| Interpretable logistic model on the same ABCD measurements + age/sex/site | **0.85 [0.81, 0.88]** |
+| Black-box benchmark | 0.83 |
+| External PH2 test of the interpretable model | 0.83 |
+
+**The rule test (S1).** With *automated* sub-scores, TDS > 4.75 catches only **8%** of melanomas (published: 85%). No cut-off gives published sensitivity and specificity together. The rule's weights and thresholds assume expert scoring.
+
+**Screening reality.** In total-body photography, "diameter > 6 mm" means about **376 excisions per melanoma** found. ABCD belongs to lesions that already stand out.
+
+**Blind spots.** Missed melanomas are mostly **symmetric** (mean A 0.09) or **tiny** (≤ 3 mm).
+
+**Deployment (Stage 6).** A local Streamlit demo (`uv run streamlit run app/demo.py`). The student scores a case first; the app then walks through outline → A/B/C/D evidence (axes, border sectors, colour map, Grad-CAM structure maps) → TDS arithmetic → interpretable probability with feature contributions → similar confirmed cases → blind-spot warnings → diagnosis reveal. The owner signed off for local educational use. **A dermatologist review is still required before use with students.**
+
+## 7. Next steps (iteration 2)
 
 - **Stage 3, Data Preparation.**
   - Image-based A, B, C, D extraction on HAM10000 and PH2.
@@ -141,6 +166,6 @@ match human-level agreement.
   - Clinician review and sign-off.
 - **Stage 6, Deployment.** A local web demo of the case walk-through.
 
-## 7. Process record
+## 8. Process record
 The full decision trail is kept in [`crisp/STATE.md`](../crisp/STATE.md): the
 transition log and the human checkpoints with their dates and decisions.

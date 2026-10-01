@@ -173,6 +173,13 @@ the ISIC 2024 metric (partial AUC above 80% TPR).
 | 1.0 | 2026-10-01 | Initial formulation | Project start |
 | 1.1 | 2026-10-01 | User confirmed: scope = both modules (clinical ABCD(E) on SLICE-3D + dermoscopic TDS on PH2/derm7pt); success criteria S1–S6 + qualitative accepted as written; hosting = local demo | Stage 1 human checkpoint |
 | 1.2 | 2026-10-01 | Primary target = melanoma vs benign (any-malignancy secondary); clinical module uses precomputed TBP features; add patient-relative ("ugly duckling") features; S4 scope depends on PH2 access; S1 benchmark = Harrington 2017 pooled sens 73–93% | Stage 2 findings (02 §5): 236/393 SLICE-3D malignancies are BCC/SCC; crops ~131 px |
+| 1.3 | 2026-10-01 | Added lessons from iteration 1 (06 §6); opens iteration 2 | CRISP loop closed after Stage 6 |
+
+### Lessons from iteration 1 (input to iteration 2)
+- Automated TDS does not reproduce published accuracy (sens 0.08 at 4.75 vs 0.85): measurement of B and C is the bottleneck, not the rule. Candidate reformulation: **students (or experts) enter A/B/C/D; the system checks and explains their TDS** against confirmed outcomes.
+- ABCD on TBP screening ≈ 376 excisions per melanoma: reposition the clinical module as "when to apply ABCD" (lesions that stand out; ugly duckling; evolution).
+- Blind spots to teach explicitly: symmetric and ≤ 3 mm melanomas.
+- Needs before student use: dermatologist review; curriculum owner + ethics for a pilot.
 
 ## Exit-gate self-check
 - [x] Every sub-problem maps to a named data-mining task (§3, T1–T6)

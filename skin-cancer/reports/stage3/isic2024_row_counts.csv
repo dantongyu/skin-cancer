@@ -1,0 +1,4 @@
+step,rows,malignant
+loaded + joined (metadata x groundtruth x supplement),401059,393
+drop Indeterminate (ambiguous histology),400945,393
+of which usable for melanoma target (BCC/SCC set to NaN),400709,157

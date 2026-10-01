@@ -1,0 +1,90 @@
+{
+  "dermoscopic": {
+    "n_train": 1485,
+    "n_holdout": 496,
+    "mel_train": 460,
+    "mel_holdout": 154,
+    "selected": "D3c",
+    "selection_rule": "highest CV AUC among D2/D3/D3c; simplest within 0.02",
+    "tds_recalibrated_cut_sens85_train": 1.68,
+    "published_cuts": [
+      4.75,
+      5.45
+    ],
+    "train_frac_TDS_gt_4.75": {
+      "mel": 0.111,
+      "nv": 0.032
+    },
+    "learned_weights_D2_raw": {
+      "A": 0.747,
+      "B": 0.582,
+      "C": -0.09,
+      "D": 0.168
+    },
+    "learned_weights_D2_scaled_to_A=1.3": {
+      "A": 1.3,
+      "B": 1.013,
+      "C": -0.157,
+      "D": 0.293
+    },
+    "published_weights": {
+      "A": 1.3,
+      "B": 0.1,
+      "C": 0.5,
+      "D": 0.5
+    },
+    "D3_standardised_coefficients": {
+      "num__c_L_std": -0.933,
+      "num__c_ab_std": 0.776,
+      "num__c_frac_dark_brown": 0.715,
+      "num__b_ramp_mean": -0.703,
+      "num__a_color_max": 0.434,
+      "num__c_frac_white": 0.419,
+      "num__c_frac_black": 0.381,
+      "num__b_compactness": 0.38,
+      "num__cnn_p_globules": 0.253,
+      "num__c_frac_light_brown": 0.183,
+      "num__b_ramp_std": 0.181,
+      "num__a_shape_max": 0.168,
+      "num__d_structureless_frac": -0.141,
+      "num__c_frac_red": 0.094,
+      "num__cnn_p_pigment_network": 0.09,
+      "num__cnn_p_streaks": 0.074,
+      "num__c_frac_blue_gray": 0.009
+    }
+  },
+  "clinical": {
+    "n_train_full": 300347,
+    "n_train_used": 20119,
+    "mel_train": 119,
+    "n_holdout": 100362,
+    "mel_holdout": 38,
+    "patients_train": 781,
+    "patients_holdout": 261,
+    "selected": "C2",
+    "selection_rule": "highest CV AUC among C2/C3/C3c; simplest within 0.02",
+    "count_rule_flags": {
+      "A": [
+        "tbp_lv_symm_2axis",
+        0.479684198612717
+      ],
+      "B": [
+        "tbp_lv_norm_border",
+        5.8217150507184
+      ],
+      "C": [
+        "tbp_lv_norm_color",
+        5.793769305719957
+      ]
+    },
+    "C2_standardised_coefficients": {
+      "num__tbp_lv_norm_border": 8.402,
+      "num__tbp_lv_area_perim_ratio": -5.207,
+      "num__tbp_lv_symm_2axis": -4.295,
+      "num__clin_size_long_diam_mm": 0.717,
+      "num__tbp_lv_radial_color_std_max": 0.526,
+      "num__tbp_lv_deltaLBnorm": 0.426,
+      "num__tbp_lv_norm_color": -0.299
+    }
+  }
+}

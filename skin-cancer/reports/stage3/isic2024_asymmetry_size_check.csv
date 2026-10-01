@@ -1,0 +1,6 @@
+size_quintile,diam_min,diam_max,n,n_melanoma,auc_tbp_lv_symm_2axis,auc_tbp_lv_norm_border,auc_tbp_lv_norm_color
+0,1.0,2.74,80447,21,0.565,0.48,0.26
+1,2.75,3.12,81060,1,,,
+2,3.13,3.68,79249,4,,,
+3,3.69,4.72,79857,9,0.356,0.305,0.791
+4,4.73,28.4,80096,122,0.368,0.404,0.792

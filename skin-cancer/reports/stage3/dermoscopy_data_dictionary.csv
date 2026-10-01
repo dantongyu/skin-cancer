@@ -1,0 +1,34 @@
+feature,criterion,definition,source,type,missing_frac,missing_treatment,decision_time
+A,A,Stolz asymmetry 0-2: axes (of the least-asymmetric orthogonal pair) where contour XOR > a_shape or half-colour ΔE > a_color,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+B,B,Stolz border 0-8: 45° sectors whose pigment ramp is narrower than b_ramp_frac × equivalent diameter (heuristic),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+C,C,Stolz colours 1-6: Stolz colours whose pixel fraction ≥ per-colour PH2-calibrated threshold,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+D,D,"Stolz structures 1-4: network, streaks, dots/globules (learned CNN detectors, joint) + structureless (heuristic)",HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+D_heuristic,D,Comparison only: D from the hand-crafted detectors (weak on Task 2),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+cnn_p_pigment_network,D,"CNN probability that pigment network is present (ResNet18, ISIC 2018 Task 2)",HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+cnn_p_globules,D,CNN probability that dots/globules are present,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+cnn_p_streaks,D,CNN probability that streaks are present,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+cnn_p_negative_network,D*,CNN probability of negative network (not a Stolz structure),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+cnn_p_milia_like_cyst,D*,CNN probability of milia-like cysts (not a Stolz structure),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+TDS,rule,1.3A + 0.1B + 0.5C + 0.5D,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+a_shape_max,A,Max contour asymmetry (XOR area / area) over the two axes,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+a_color_max,A,Max ΔE76 between mean Lab of the two halves,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0005,none needed,Y: computed from the dermoscopic image at the visit
+b_ramp_mean,B,Mean pigment-ramp width / equivalent diameter over 8 sectors (low = abrupt),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0005,NaN when sector has no border pixels; median impute in folds,Y: computed from the dermoscopic image at the visit
+b_ramp_std,B,Std of sector ramp widths (irregularity of border sharpness),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0005,NaN when sector has no border pixels; median impute in folds,Y: computed from the dermoscopic image at the visit
+b_compactness,B,perimeter² / (4π area); 1 = circle,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_L_std,C,Std of L* inside lesion (colour variegation),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0005,none needed,Y: computed from the dermoscopic image at the visit
+c_ab_std,C,"Mean std of a*, b* inside lesion",HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0005,none needed,Y: computed from the dermoscopic image at the visit
+d_net_score,D,Fraction of lesion covered by dark mesh lines (black-hat),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+d_n_dots,D,Count of small dark blobs (LoG σ<2.5 px),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+d_n_globules,D,Count of larger dark blobs (LoG σ≥2.5 px),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),int64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+d_streak_score,D,Fraction of strong peripheral ridges oriented radially,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+d_structureless_frac,D,Fraction of lesion with low local texture and no mesh,HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+lesion_area_frac,size,Lesion area / image area (no mm calibration in HAM10000),HAM10000 image + Tschandl mask (src/skin_cancer/prep/abcd_image.py),float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+age,context,Patient age,HAM10000 metadata,float64,0.0025,indicator + median impute inside CV folds,Y: visible/askable at the visit
+sex,context,Patient sex,HAM10000 metadata,str,0.0,none needed,Y: visible/askable at the visit
+localization,context,Anatomic site,HAM10000 metadata,str,0.0,none needed,Y: visible/askable at the visit
+c_frac_white,C,Fraction of lesion pixels nearest the white reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_frac_red,C,Fraction of lesion pixels nearest the red reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_frac_light_brown,C,Fraction of lesion pixels nearest the light_brown reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_frac_dark_brown,C,Fraction of lesion pixels nearest the dark_brown reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_frac_blue_gray,C,Fraction of lesion pixels nearest the blue_gray reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit
+c_frac_black,C,Fraction of lesion pixels nearest the black reference (skin-normalised Lab),image,float64,0.0,none needed,Y: computed from the dermoscopic image at the visit

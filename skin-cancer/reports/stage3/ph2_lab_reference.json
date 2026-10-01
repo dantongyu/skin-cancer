@@ -1,0 +1,19 @@
+{
+  "skin_median_lab": [
+    74.1,
+    13.8,
+    18.4
+  ],
+  "lesion_median_lab_light_brown_only": [
+    60.8,
+    22.6,
+    35.7
+  ],
+  "n_light_brown_only": 27,
+  "lesion_median_lab_dark_brown_only": [
+    53.1,
+    19.2,
+    23.6
+  ],
+  "n_dark_brown_only": 25
+}

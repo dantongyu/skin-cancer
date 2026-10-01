@@ -1,0 +1,21 @@
+{
+  "n_images_task2": 2594,
+  "n_with_task1_mask_and_task2_gt": 2594,
+  "n_overlap_with_ham_excluded": 0,
+  "n_used": 2594,
+  "n_extract_errors": 0,
+  "auc_pigment_network": 0.68,
+  "prevalence_pigment_network": 0.587,
+  "auc_streaks": 0.325,
+  "prevalence_streaks": 0.039,
+  "auc_globules(dots+globules blobs)": 0.558,
+  "prevalence_globules(dots+globules blobs)": 0.232,
+  "auc_globules(large blobs)": 0.557,
+  "prevalence_globules(large blobs)": 0.232,
+  "thresholds": {
+    "d_network": 0.01,
+    "d_streaks": 0.35,
+    "d_globules": 1,
+    "d_dots": 1
+  }
+}

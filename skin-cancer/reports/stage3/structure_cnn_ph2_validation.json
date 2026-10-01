@@ -1,0 +1,18 @@
+{
+  "dots_globules": {
+    "prevalence": 113,
+    "n": 200,
+    "auc": 0.779,
+    "kappa_at_threshold": 0.417
+  },
+  "streaks": {
+    "prevalence": 30,
+    "auc": 0.76,
+    "kappa_at_threshold": 0.219
+  },
+  "pigment_network": {
+    "note": "PH2 marks network present (typical/atypical) in all 200; only detection rate is checkable",
+    "detected_frac": 0.64,
+    "auc_atypical_vs_typical": 0.512
+  }
+}

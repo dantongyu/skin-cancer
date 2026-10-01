@@ -1,0 +1,7 @@
+step,rows,melanoma
+HAM10000 images,10015,1113
+"primary cohort, one image per lesion (histo mel+nv; CNN applied)",1981,614
+feature extraction succeeded,1981,614
+primary cohort: histology-confirmed melanocytic (mel+nv),1981,614
+  unique lesions in primary cohort,1981,614
+secondary: melanoma vs all benign (any confirmation),1981,614

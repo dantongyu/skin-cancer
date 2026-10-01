@@ -1,0 +1,26 @@
+{
+  "thresholds": {
+    "a_shape": 0.225,
+    "a_color": 10.0,
+    "b_ramp_frac": 0.03,
+    "c_min_frac": 0.02,
+    "c_min_frac_per": [
+      0.01,
+      0.09,
+      0.22,
+      0.02,
+      0.12,
+      0.16
+    ],
+    "c_l_offset": 0.0,
+    "d_network": 0.01,
+    "d_dots": 1,
+    "d_globules": 1,
+    "d_streaks": 0.35,
+    "d_structureless": 0.3
+  },
+  "provenance": {
+    "A,C": "PH2 expert labels, grid search on all 200 (OOF kappa in ph2_abcd_validation.json)",
+    "D": "ISIC 2018 Task 2 attribute masks (HAM overlap removed), Youden's J; task2_d_calibration.json"
+  }
+}

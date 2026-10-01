@@ -1,0 +1,308 @@
+{
+  "dermoscopic_holdout": {
+    "n": 496,
+    "n_melanoma": 154,
+    "D1 fixed Stolz TDS": {
+      "auc": [
+        0.639,
+        0.5841,
+        0.6905
+      ],
+      "pauc80": [
+        0.0337,
+        0.0215,
+        0.0498
+      ],
+      "spec_at_sens85": 0.24
+    },
+    "D2 LR on A,B,C,D": {
+      "auc": [
+        0.6953,
+        0.6476,
+        0.7467
+      ],
+      "pauc80": [
+        0.0527,
+        0.0368,
+        0.0714
+      ],
+      "spec_at_sens85": 0.377
+    },
+    "D3 LR continuous": {
+      "auc": [
+        0.7894,
+        0.7497,
+        0.832
+      ],
+      "pauc80": [
+        0.0852,
+        0.0678,
+        0.1026
+      ],
+      "spec_at_sens85": 0.544
+    },
+    "D3c LR continuous+context (SELECTED)": {
+      "auc": [
+        0.8473,
+        0.8102,
+        0.8792
+      ],
+      "pauc80": [
+        0.1065,
+        0.0866,
+        0.1271
+      ],
+      "spec_at_sens85": 0.69
+    },
+    "D4 benchmark GBM": {
+      "auc": [
+        0.829,
+        0.788,
+        0.8671
+      ],
+      "pauc80": [
+        0.0913,
+        0.0744,
+        0.1128
+      ],
+      "spec_at_sens85": 0.611
+    },
+    "baseline_auc": 0.5,
+    "S1_rule_confirmation": {
+      "TDS>4.75": {
+        "sens": [
+          0.0844,
+          0.0455,
+          0.1299
+        ],
+        "spec": [
+          0.9883,
+          0.9766,
+          0.9971
+        ]
+      },
+      "TDS>5.45": {
+        "sens": [
+          0.026,
+          0.0065,
+          0.0519
+        ],
+        "spec": [
+          0.9942,
+          0.9854,
+          1.0
+        ]
+      },
+      "TDS>=1.68 (recalibrated on train)": {
+        "sens": [
+          0.8766,
+          0.8247,
+          0.9286
+        ],
+        "spec": [
+          0.2339,
+          0.1871,
+          0.2779
+        ]
+      },
+      "harrington_2017_pooled_TDS>4.75": {
+        "cut": 4.75,
+        "sens": [
+          0.85,
+          0.73,
+          0.93
+        ],
+        "spec": [
+          0.72,
+          0.65,
+          0.78
+        ]
+      }
+    },
+    "S5_calibration_D3c": {
+      "ece_raw_balanced": 0.1011,
+      "ece_prior_corrected": 0.0368,
+      "train_prior": 0.31
+    },
+    "business_NNE_at_prev_0.082": {
+      "TDS_recalibrated": {
+        "sens": 0.877,
+        "spec": 0.234,
+        "NNE": 10.8
+      },
+      "D3c_at_holdout_sens85_point(descriptive)": {
+        "sens": 0.851,
+        "spec": 0.69,
+        "NNE": 5.1
+      }
+    },
+    "T6_missed_melanoma_profile": {
+      "n_missed": 23,
+      "mean_ABCD_missed": {
+        "A": 0.09,
+        "B": 0.3,
+        "C": 2.09,
+        "D": 2.7,
+        "TDS": 2.53
+      },
+      "mean_ABCD_detected": {
+        "A": 0.66,
+        "B": 0.65,
+        "C": 1.89,
+        "D": 2.4,
+        "TDS": 3.06
+      }
+    }
+  },
+  "ph2_external": {
+    "n": 200,
+    "n_melanoma": 40,
+    "TDS": {
+      "auc": [
+        0.6836,
+        0.5889,
+        0.7825
+      ]
+    },
+    "p_D2": {
+      "auc": [
+        0.7094,
+        0.6094,
+        0.8092
+      ]
+    },
+    "p_D3": {
+      "auc": [
+        0.8295,
+        0.7394,
+        0.9091
+      ]
+    },
+    "TDS>4.75": {
+      "sens": [
+        0.225,
+        0.1244,
+        0.35
+      ],
+      "spec": [
+        0.9437,
+        0.9062,
+        0.975
+      ]
+    },
+    "TDS>=1.68": {
+      "sens": [
+        0.9,
+        0.8,
+        0.975
+      ],
+      "spec": [
+        0.15,
+        0.0938,
+        0.2062
+      ]
+    }
+  },
+  "clinical_holdout": {
+    "n": 100362,
+    "n_melanoma": 38,
+    "prevalence": 0.00038,
+    "C1 diameter>6mm": {
+      "auc": [
+        0.8048,
+        0.7256,
+        0.8707
+      ],
+      "pauc80": [
+        0.0621,
+        0.0427,
+        0.109
+      ]
+    },
+    "C1b ABCD count": {
+      "auc": [
+        0.8405,
+        0.7758,
+        0.8936
+      ],
+      "pauc80": [
+        0.1091,
+        0.0687,
+        0.1434
+      ]
+    },
+    "C2 LR ABCD core (SELECTED)": {
+      "auc": [
+        0.8042,
+        0.7056,
+        0.8959
+      ],
+      "pauc80": [
+        0.0329,
+        0.0063,
+        0.1108
+      ]
+    },
+    "C3c LR +ugly+context": {
+      "auc": [
+        0.8454,
+        0.7557,
+        0.9205
+      ],
+      "pauc80": [
+        0.0688,
+        0.0143,
+        0.1447
+      ]
+    },
+    "C4 benchmark GBM": {
+      "auc": [
+        0.9329,
+        0.8809,
+        0.972
+      ],
+      "pauc80": [
+        0.1492,
+        0.1077,
+        0.1822
+      ]
+    },
+    "D>6mm_operating_point": {
+      "sens": 0.711,
+      "spec": 0.899,
+      "flagged_per_100k_crops": 10117,
+      "NNE_at_holdout_prevalence": 376.1
+    },
+    "count>=2_operating_point": {
+      "sens": 0.605,
+      "spec": 0.872,
+      "NNE_at_holdout_prevalence": 560.3
+    },
+    "strong_label_subset(mel vs biopsied benign)": {
+      "n": 178,
+      "n_melanoma": 38,
+      "auc_C2": 0.64,
+      "auc_diam": 0.728
+    },
+    "by_institution(n_mel>=5)": {
+      "Department of Dermatology, Hospital Cl\u00edn": {
+        "n_mel": 9,
+        "auc_C2": 0.98
+      },
+      "Memorial Sloan Kettering Cancer Center": {
+        "n_mel": 21,
+        "auc_C2": 0.754
+      }
+    },
+    "tiny_melanomas_in_holdout": {
+      "n": 4,
+      "C2_rank_percentile": [
+        0.057,
+        0.07,
+        0.022,
+        0.175
+      ]
+    }
+  },
+  "S6_latency_seconds_one_case": 0.67
+}

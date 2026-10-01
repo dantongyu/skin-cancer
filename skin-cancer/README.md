@@ -19,18 +19,20 @@ The work follows **CRISP-DM** (Provost & Fawcett, *Data Science for Business*). 
 stage has a report under [`crisp/`](crisp/), and progress is tracked in
 [`crisp/STATE.md`](crisp/STATE.md).
 
-## Status (2026-10-01)
+## Status (2026-10-01): iteration 1 complete
 
 | Stage | Report | Status |
 |---|---|---|
-| 1 Business Understanding | [`crisp/01_business_understanding.md`](crisp/01_business_understanding.md) | ✅ gate passed, user-confirmed |
-| 2 Data Understanding | [`crisp/02_data_understanding.md`](crisp/02_data_understanding.md) | ✅ gate passed |
-| 3 Data Preparation | — | next |
-| 4 Modeling | — | |
-| 5 Evaluation | — | |
-| 6 Deployment (web demo) | — | |
+| 1 Business Understanding | [`crisp/01_business_understanding.md`](crisp/01_business_understanding.md) | ✅ (v1.3 with lessons) |
+| 2 Data Understanding | [`crisp/02_data_understanding.md`](crisp/02_data_understanding.md) | ✅ |
+| 3 Data Preparation | [`crisp/03_data_preparation.md`](crisp/03_data_preparation.md) | ✅ |
+| 4 Modeling | [`crisp/04_modeling.md`](crisp/04_modeling.md) | ✅ |
+| 5 Evaluation | [`crisp/05_evaluation.md`](crisp/05_evaluation.md) | ✅ owner sign-off (local demo) |
+| 6 Deployment | [`crisp/06_deployment.md`](crisp/06_deployment.md) | ✅ local web demo |
 
-A narrative summary of findings so far is in [`docs/REPORT.md`](docs/REPORT.md).
+**Run the demo:** `uv run streamlit run app/demo.py`, then open http://localhost:8501. This needs the data and models listed under "Reproduce".
+
+Narrative summary: [`docs/REPORT.md`](docs/REPORT.md).
 
 ## Datasets
 
@@ -51,7 +53,16 @@ uv sync                                                   # Python 3.12 env
 uv run python -m skin_cancer.data.download                # ~4.5 GB into ~/data/skin-cancer
 uv run python -m skin_cancer.data.profile_isic2024        # -> reports/stage2/isic2024_*
 uv run python -m skin_cancer.data.profile_dermoscopy      # -> reports/stage2/dermoscopy_profile.json
+uv run python -m skin_cancer.prep.isic2024                # Stage 3 clinical features
+uv run python -m skin_cancer.prep.dermoscopy ph2 task2 ham  # A/B/C/D extraction + calibration
+uv run python -m skin_cancer.prep.structure_cnn            # learned D detectors (M2 GPU / MPS)
+uv run python -m skin_cancer.prep.dermoscopy ph2val finalize
+uv run python -m skin_cancer.model.train                  # Stage 4
+uv run python -m skin_cancer.model.evaluate               # Stage 5 (holdouts scored once)
+uv run streamlit run app/demo.py                          # Stage 6 demo
 ```
+
+ISIC 2018 Task 1/2 images and Task 1 masks are also needed (`ISIC2018_Task1-2_Training_Input.zip`, `ISIC2018_Task1_Training_GroundTruth.zip`) and must be placed in `~/data/skin-cancer/isic2018_task2/`.
 
 ## Layout
 

@@ -1,0 +1,27 @@
+{
+  "n_meta": 10015,
+  "n_images_found": 10015,
+  "n_masks_found": 10015,
+  "n_extract_errors": 0,
+  "errors_sample": [],
+  "thresholds": {
+    "a_shape": 0.225,
+    "a_color": 10.0,
+    "b_ramp_frac": 0.03,
+    "c_min_frac": 0.02,
+    "c_min_frac_per": [
+      0.01,
+      0.09,
+      0.22,
+      0.02,
+      0.12,
+      0.16
+    ],
+    "c_l_offset": 0.0,
+    "d_network": 0.1,
+    "d_dots": 6,
+    "d_globules": 3,
+    "d_streaks": 0.12,
+    "d_structureless": 0.3
+  }
+}
