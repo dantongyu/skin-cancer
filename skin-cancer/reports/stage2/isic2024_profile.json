@@ -1,0 +1,378 @@
+{
+  "n_images": 401059,
+  "n_malignant": 393,
+  "base_rate_malignant": 0.0009799056996601498,
+  "label_missing": 0,
+  "n_lesion_id_present": 22058,
+  "malignant_with_lesion_id": 393,
+  "licence_counts": {
+    "CC-BY": 188812,
+    "CC-BY-NC": 183582,
+    "CC-0": 28665
+  },
+  "attribution_counts": {
+    "Memorial Sloan Kettering Cancer Center": 129068,
+    "Department of Dermatology, Hospital Cl\u00ednic de Barcelona": 105724,
+    "University Hospital of Basel": 65218,
+    "Frazer Institute, The University of Queensland, Dermatology Research Centre": 51768,
+    "ACEMID MIA": 28665,
+    "ViDIR Group, Department of Dermatology, Medical University of Vienna": 12640,
+    "Department of Dermatology, University of Athens, Andreas Syggros Hospital of Skin and Venereal Diseases, Alexander Stratigos, Konstantinos Liopyris": 7976
+  },
+  "malignant_by_licence": {
+    "CC-0": {
+      "sum": 33.0,
+      "count": 28665
+    },
+    "CC-BY": {
+      "sum": 261.0,
+      "count": 188812
+    },
+    "CC-BY-NC": {
+      "sum": 99.0,
+      "count": 183582
+    }
+  },
+  "iddx_1_counts": {
+    "Benign": 400552,
+    "Malignant": 393,
+    "Indeterminate": 114
+  },
+  "iddx_3_malignant": {
+    "Basal cell carcinoma": 163,
+    "Melanoma in situ": 80,
+    "Melanoma Invasive": 63,
+    "Squamous cell carcinoma in situ": 49,
+    "Squamous cell carcinoma, Invasive": 22,
+    "Melanoma, NOS": 13,
+    "Squamous cell carcinoma, NOS": 2,
+    "Melanoma metastasis": 1
+  },
+  "has_zip_metadata": true,
+  "n_columns": 55,
+  "columns": [
+    "isic_id",
+    "malignant",
+    "attribution",
+    "copyright_license",
+    "lesion_id",
+    "iddx_full",
+    "iddx_1",
+    "iddx_2",
+    "iddx_3",
+    "iddx_4",
+    "iddx_5",
+    "mel_mitotic_index",
+    "mel_thick_mm",
+    "tbp_lv_dnn_lesion_confidence",
+    "patient_id",
+    "age_approx",
+    "sex",
+    "anatom_site_general",
+    "clin_size_long_diam_mm",
+    "image_type",
+    "tbp_tile_type",
+    "tbp_lv_A",
+    "tbp_lv_Aext",
+    "tbp_lv_B",
+    "tbp_lv_Bext",
+    "tbp_lv_C",
+    "tbp_lv_Cext",
+    "tbp_lv_H",
+    "tbp_lv_Hext",
+    "tbp_lv_L",
+    "tbp_lv_Lext",
+    "tbp_lv_areaMM2",
+    "tbp_lv_area_perim_ratio",
+    "tbp_lv_color_std_mean",
+    "tbp_lv_deltaA",
+    "tbp_lv_deltaB",
+    "tbp_lv_deltaL",
+    "tbp_lv_deltaLB",
+    "tbp_lv_deltaLBnorm",
+    "tbp_lv_eccentricity",
+    "tbp_lv_location",
+    "tbp_lv_location_simple",
+    "tbp_lv_minorAxisMM",
+    "tbp_lv_nevi_confidence",
+    "tbp_lv_norm_border",
+    "tbp_lv_norm_color",
+    "tbp_lv_perimeterMM",
+    "tbp_lv_radial_color_std_max",
+    "tbp_lv_stdL",
+    "tbp_lv_stdLExt",
+    "tbp_lv_symm_2axis",
+    "tbp_lv_symm_2axis_angle",
+    "tbp_lv_x",
+    "tbp_lv_y",
+    "tbp_lv_z"
+  ],
+  "n_patients": 1042,
+  "images_per_patient": {
+    "count": 1042.0,
+    "mean": 384.9,
+    "std": 540.3,
+    "min": 1.0,
+    "25%": 115.0,
+    "50%": 241.5,
+    "75%": 477.5,
+    "max": 9184.0
+  },
+  "patients_with_malignant": 259,
+  "malignant_per_positive_patient": {
+    "count": 259.0,
+    "mean": 1.52,
+    "std": 1.3,
+    "min": 1.0,
+    "25%": 1.0,
+    "50%": 1.0,
+    "75%": 2.0,
+    "max": 14.0
+  },
+  "malignant_rate_by_sex": [
+    {
+      "sex": "female",
+      "sum": 109.0,
+      "count": 123996,
+      "mean": 0.00088
+    },
+    {
+      "sex": "male",
+      "sum": 274.0,
+      "count": 265546,
+      "mean": 0.00103
+    },
+    {
+      "sex": NaN,
+      "sum": 10.0,
+      "count": 11517,
+      "mean": 0.00087
+    }
+  ],
+  "malignant_rate_by_anatom_site_general": [
+    {
+      "anatom_site_general": "anterior torso",
+      "sum": 82.0,
+      "count": 87770,
+      "mean": 0.00093
+    },
+    {
+      "anatom_site_general": "head/neck",
+      "sum": 78.0,
+      "count": 12046,
+      "mean": 0.00648
+    },
+    {
+      "anatom_site_general": "lower extremity",
+      "sum": 73.0,
+      "count": 103028,
+      "mean": 0.00071
+    },
+    {
+      "anatom_site_general": "posterior torso",
+      "sum": 103.0,
+      "count": 121902,
+      "mean": 0.00084
+    },
+    {
+      "anatom_site_general": "upper extremity",
+      "sum": 57.0,
+      "count": 70557,
+      "mean": 0.00081
+    },
+    {
+      "anatom_site_general": NaN,
+      "sum": 0.0,
+      "count": 5756,
+      "mean": 0.0
+    }
+  ],
+  "malignant_rate_by_tbp_tile_type": [
+    {
+      "tbp_tile_type": "3D: XP",
+      "sum": 197.0,
+      "count": 285903,
+      "mean": 0.00069
+    },
+    {
+      "tbp_tile_type": "3D: white",
+      "sum": 196.0,
+      "count": 115156,
+      "mean": 0.0017
+    }
+  ],
+  "malignant_rate_by_image_type": [
+    {
+      "image_type": "TBP tile: close-up",
+      "sum": 393.0,
+      "count": 401059,
+      "mean": 0.00098
+    }
+  ],
+  "malignant_rate_by_tbp_lv_location_simple": [
+    {
+      "tbp_lv_location_simple": "Head & Neck",
+      "sum": 78.0,
+      "count": 12046,
+      "mean": 0.00648
+    },
+    {
+      "tbp_lv_location_simple": "Left Arm",
+      "sum": 34.0,
+      "count": 36348,
+      "mean": 0.00094
+    },
+    {
+      "tbp_lv_location_simple": "Left Leg",
+      "sum": 44.0,
+      "count": 53075,
+      "mean": 0.00083
+    },
+    {
+      "tbp_lv_location_simple": "Right Arm",
+      "sum": 23.0,
+      "count": 34209,
+      "mean": 0.00067
+    },
+    {
+      "tbp_lv_location_simple": "Right Leg",
+      "sum": 29.0,
+      "count": 49953,
+      "mean": 0.00058
+    },
+    {
+      "tbp_lv_location_simple": "Torso Back",
+      "sum": 103.0,
+      "count": 121902,
+      "mean": 0.00084
+    },
+    {
+      "tbp_lv_location_simple": "Torso Front",
+      "sum": 82.0,
+      "count": 87770,
+      "mean": 0.00093
+    },
+    {
+      "tbp_lv_location_simple": "Unknown",
+      "sum": 0.0,
+      "count": 5756,
+      "mean": 0.0
+    }
+  ],
+  "malignant_rate_by_attribution": [
+    {
+      "attribution": "ACEMID MIA",
+      "sum": 33.0,
+      "count": 28665,
+      "mean": 0.00115
+    },
+    {
+      "attribution": "Department of Dermatology, Hospital Cl\u00ednic de Barcelona",
+      "sum": 72.0,
+      "count": 105724,
+      "mean": 0.00068
+    },
+    {
+      "attribution": "Department of Dermatology, University of Athens, Andreas Syggros Hospital of Skin and Venereal Diseases, Alexander Stratigos, Konstantinos Liopyris",
+      "sum": 6.0,
+      "count": 7976,
+      "mean": 0.00075
+    },
+    {
+      "attribution": "Frazer Institute, The University of Queensland, Dermatology Research Centre",
+      "sum": 81.0,
+      "count": 51768,
+      "mean": 0.00156
+    },
+    {
+      "attribution": "Memorial Sloan Kettering Cancer Center",
+      "sum": 174.0,
+      "count": 129068,
+      "mean": 0.00135
+    },
+    {
+      "attribution": "University Hospital of Basel",
+      "sum": 13.0,
+      "count": 65218,
+      "mean": 0.0002
+    },
+    {
+      "attribution": "ViDIR Group, Department of Dermatology, Medical University of Vienna",
+      "sum": 14.0,
+      "count": 12640,
+      "mean": 0.00111
+    }
+  ],
+  "age_approx": {
+    "count": 398261.0,
+    "mean": 58.0,
+    "std": 13.6,
+    "min": 5.0,
+    "25%": 50.0,
+    "50%": 60.0,
+    "75%": 70.0,
+    "max": 85.0
+  },
+  "melanoma_subset": {
+    "n": 400823,
+    "n_melanoma": 157,
+    "base_rate": 0.0003916940894110368
+  },
+  "melanoma_diameter_gt6mm": {
+    "sensitivity": 0.6114649681528662,
+    "specificity": 0.9041246324869093
+  },
+  "melanoma_long_diam_mm": {
+    "count": 157.0,
+    "mean": 7.55,
+    "std": 3.97,
+    "min": 1.07,
+    "25%": 4.93,
+    "50%": 6.98,
+    "75%": 10.35,
+    "max": 18.94
+  },
+  "iddx_full_top_benign": {
+    "Benign": 399991,
+    "Benign::Benign melanocytic proliferations::Nevus::Nevus, Atypical, Dysplastic, or Clark": 228,
+    "Benign::Benign melanocytic proliferations::Nevus": 141,
+    "Indeterminate::Indeterminate melanocytic proliferations::Atypical melanocytic neoplasm": 64,
+    "Benign::Benign epidermal proliferations::Seborrheic keratosis": 56,
+    "Indeterminate::Indeterminate epidermal proliferations::Solar or actinic keratosis": 38,
+    "Benign::Benign melanocytic proliferations::Nevus::Nevus, NOS, Compound": 30,
+    "Benign::Benign melanocytic proliferations::Nevus::Nevus, NOS, Dermal": 20,
+    "Benign::Benign epidermal proliferations::Solar lentigo": 12,
+    "Benign::Benign epidermal proliferations::Lichen planus like keratosis": 11,
+    "Benign::Benign soft tissue proliferations - Fibro-histiocytic::Dermatofibroma": 11,
+    "Indeterminate::Indeterminate melanocytic proliferations::Atypical intraepithelial melanocytic proliferation": 11,
+    "Benign::Benign melanocytic proliferations::Nevus::Nevus, NOS, Junctional": 10,
+    "Benign::Inflammatory or infectious diseases::Verruca": 7,
+    "Benign::Flat melanotic pigmentations - not melanocytic nevus::Lentigo NOS": 5
+  },
+  "indeterminate_iddx_full": {
+    "Indeterminate::Indeterminate melanocytic proliferations::Atypical melanocytic neoplasm": 64,
+    "Indeterminate::Indeterminate epidermal proliferations::Solar or actinic keratosis": 38,
+    "Indeterminate::Indeterminate melanocytic proliferations::Atypical intraepithelial melanocytic proliferation": 11,
+    "Indeterminate::Indeterminate epidermal proliferations::Solar or actinic keratosis::Actinic keratosis, Bowenoid": 1
+  },
+  "lesion_id_by_label": {
+    "0.0": {
+      "False": 379001,
+      "True": 21665
+    },
+    "1.0": {
+      "False": 0,
+      "True": 393
+    }
+  },
+  "benign_with_iddx2": 675,
+  "dnn_confidence_auc": {
+    "tbp_lv_nevi_confidence": 0.3543,
+    "tbp_lv_dnn_lesion_confidence": 0.3135
+  },
+  "diameter_gt6mm": {
+    "frac_lesions_gt6": 0.09617537569285317,
+    "sensitivity": 0.4020356234096692,
+    "specificity": 0.9041246324869093
+  }
+}

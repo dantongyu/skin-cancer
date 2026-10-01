@@ -1,0 +1,117 @@
+{
+  "ham10000": {
+    "n_images": 10015,
+    "n_lesions": 7470,
+    "images_per_lesion_max": 6,
+    "dx_images": {
+      "nv": 6705,
+      "mel": 1113,
+      "bkl": 1099,
+      "bcc": 514,
+      "akiec": 327,
+      "vasc": 142,
+      "df": 115
+    },
+    "dx_lesions": {
+      "nv": 5403,
+      "bkl": 727,
+      "mel": 614,
+      "bcc": 327,
+      "akiec": 228,
+      "vasc": 98,
+      "df": 73
+    },
+    "dx_type_images": {
+      "histo": 5340,
+      "follow_up": 3704,
+      "consensus": 902,
+      "confocal": 69
+    },
+    "dx_type_by_dx_lesions": {
+      "akiec": {
+        "confocal": 0,
+        "consensus": 0,
+        "follow_up": 0,
+        "histo": 228
+      },
+      "bcc": {
+        "confocal": 0,
+        "consensus": 0,
+        "follow_up": 0,
+        "histo": 327
+      },
+      "bkl": {
+        "confocal": 34,
+        "consensus": 206,
+        "follow_up": 0,
+        "histo": 487
+      },
+      "df": {
+        "confocal": 0,
+        "consensus": 44,
+        "follow_up": 0,
+        "histo": 29
+      },
+      "mel": {
+        "confocal": 0,
+        "consensus": 0,
+        "follow_up": 0,
+        "histo": 614
+      },
+      "nv": {
+        "confocal": 0,
+        "consensus": 332,
+        "follow_up": 3704,
+        "histo": 1367
+      },
+      "vasc": {
+        "confocal": 0,
+        "consensus": 65,
+        "follow_up": 0,
+        "histo": 33
+      }
+    },
+    "melanocytic_mel_vs_nv_lesions": {
+      "mel": 614,
+      "nv": 5403
+    },
+    "source_dataset": {
+      "vidir_molemax": 3954,
+      "vidir_modern": 3363,
+      "rosendahl": 2259,
+      "vienna_dias": 439
+    },
+    "missing": {
+      "age": 57
+    },
+    "age": {
+      "count": 9958.0,
+      "mean": 51.9,
+      "std": 17.0,
+      "min": 0.0,
+      "25%": 40.0,
+      "50%": 50.0,
+      "75%": 65.0,
+      "max": 85.0
+    },
+    "n_segmentation_masks": 10016,
+    "patient_id_available": false
+  },
+  "isic2018_task2": {
+    "n_images": 2594,
+    "attribute_nonempty_images": {
+      "globules": 603,
+      "milia_like_cyst": 682,
+      "negative_network": 190,
+      "pigment_network": 1523,
+      "streaks": 100
+    },
+    "attribute_masks_total": {
+      "globules": 2594,
+      "milia_like_cyst": 2594,
+      "negative_network": 2594,
+      "pigment_network": 2594,
+      "streaks": 2594
+    }
+  }
+}

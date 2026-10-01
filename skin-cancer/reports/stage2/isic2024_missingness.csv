@@ -1,0 +1,11 @@
+,frac_missing
+iddx_5,1.0
+mel_mitotic_index,0.9999
+mel_thick_mm,0.9998
+iddx_4,0.9986
+iddx_3,0.9973
+iddx_2,0.9973
+lesion_id,0.945
+sex,0.0287
+anatom_site_general,0.0144
+age_approx,0.007

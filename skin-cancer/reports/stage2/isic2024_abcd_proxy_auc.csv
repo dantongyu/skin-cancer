@@ -1,0 +1,14 @@
+criterion,feature,present,missing_frac,auc_raw,auc_best_dir,median_benign,median_malignant
+A,tbp_lv_symm_2axis,True,0.0,0.5213,0.5213,0.282,0.304
+A,tbp_lv_symm_2axis_angle,True,0.0,0.5076,0.5076,90.0,90.0
+A,tbp_lv_eccentricity,True,0.0,0.4472,0.5528,0.768,0.738
+B,tbp_lv_norm_border,True,0.0,0.5531,0.5531,2.997,3.345
+B,tbp_lv_perimeterMM,True,0.0,0.6231,0.6231,10.015,16.242
+B,tbp_lv_area_perim_ratio,True,0.0,0.5432,0.5432,17.423,18.325
+C,tbp_lv_norm_color,True,0.0,0.6156,0.6156,2.764,4.532
+C,tbp_lv_color_std_mean,True,0.0,0.6098,0.6098,0.931,1.489
+C,tbp_lv_radial_color_std_max,True,0.0,0.616,0.616,0.902,1.475
+C,tbp_lv_deltaLBnorm,True,0.0,0.5492,0.5492,6.946,7.629
+D,clin_size_long_diam_mm,True,0.0,0.6104,0.6104,3.37,5.14
+D,tbp_lv_areaMM2,True,0.0,0.618,0.618,5.686,12.854
+D,tbp_lv_minorAxisMM,True,0.0,0.6272,0.6272,2.264,3.543

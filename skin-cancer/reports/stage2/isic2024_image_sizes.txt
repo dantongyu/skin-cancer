@@ -1,0 +1,4 @@
+n_jpg 401059
+sampled 500; width px: min 91 median 131 max 209
+top sizes [((131, 131), 34), ((129, 129), 26), ((127, 127), 26), ((133, 133), 25), ((121, 121), 24)]
+=> mm per px at median (15 mm crop): 0.115
