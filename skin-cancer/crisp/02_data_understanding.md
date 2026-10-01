@@ -1,7 +1,7 @@
 # 02 — Data Understanding
 
-**Project:** skin-cancer · **Iteration:** 1 · **Version:** 1.0 · **Date:** 2026-10-01
-**Inputs:** `crisp/01_business_understanding.md` v1.1 (both modules; local demo)
+**Project:** skin-cancer · **Iteration:** 1 · **Version:** 1.1 · **Date:** 2026-10-01
+**Inputs:** `crisp/01_business_understanding.md` v1.2 (both modules; local demo)
 
 Every number below comes from a saved output in `reports/stage2/`:
 - `isic2024_profile.json`
@@ -24,10 +24,10 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
 | Source | Contents | Origin / purpose | Population | Reliability | Cost to obtain | Decision |
 |---|---|---|---|---|---|---|
 | **ISIC 2024 SLICE-3D** (train) | 401,059 15×15 mm crops from 3D total-body photos. **55 columns**: age, sex, site, `patient_id`, 34 Canfield Lesion Visualizer (`tbp_lv_*`) features incl. ABCD proxies, diagnosis hierarchy `iddx_*` | Kaggle/ISIC 2024 challenge. Crops were auto-extracted from Vectra WB360 scans at 7 centres (Kurtansky et al., *Sci Data* 2024, doi:10.1038/s41597-024-03743-w) | 1,042 patients, median age 60 (`age_approx`); 7 institutions in the US, Europe and Australia | Malignant labels are histopathology-confirmed ("strong"). Benign labels are mostly *weak*: assumed benign clinically, no biopsy (see §2) | Free; downloaded (1.24 GB + 49 MB CSVs). **CC-BY-NC 4.0** (LICENSE.txt inside the zip); individual images carry CC-0, CC-BY or CC-BY-NC | **USE.** Clinical ABCD(E) module (T2–T6) |
-| **HAM10000** | 10,015 dermoscopic images, 7,470 lesions, 7 diagnoses, age, sex, site. 10,016 lesion masks (Tschandl) | Collected in Vienna and Queensland for training and benchmarking classifiers (Tschandl 2018) | Referral or specialist population, **enriched for disease** (melanoma is 614 of 7,470 lesions) | Melanoma: 614/614 histopathology. Nevi: 1,367 histo, 3,704 follow-up, 332 consensus (lesion level) | Free (Harvard Dataverse doi:10.7910/DVN/DBW86T); metadata and masks downloaded, images (2.8 GB) downloading. **CC-BY-NC 4.0** | **USE.** Dermoscopic module: extract ABCD from images (T1), compute TDS (T2), plus T3–T6 |
+| **HAM10000** | 10,015 dermoscopic images, 7,470 lesions, 7 diagnoses, age, sex, site. 10,016 lesion masks (Tschandl) | Collected in Vienna and Queensland for training and benchmarking classifiers (Tschandl 2018) | Referral or specialist population, **enriched for disease** (melanoma is 614 of 7,470 lesions) | Melanoma: 614/614 histopathology. Nevi: 1,367 histo, 3,704 follow-up, 332 consensus (lesion level) | Free (Harvard Dataverse doi:10.7910/DVN/DBW86T); metadata, masks and images (2.8 GB) downloaded. **CC-BY-NC 4.0** | **USE.** Dermoscopic module: extract ABCD from images (T1), compute TDS (T2), plus T3–T6 |
 | **ISIC 2018 Task 2** attribute masks | 2,594 dermoscopic images × 5 attribute masks | Challenge task on detecting dermoscopic structures (Codella 2019) | ISIC Archive images | Expert-drawn masks | Ground truth (35 MB) downloaded, CC-BY-NC. Images: 11.2 GB, CC-0, *not yet downloaded* | **USE** to validate the detectors for the D criterion (T1). Image download is a Stage 3 decision |
-| **PH2** | 200 dermoscopic images (80 common nevi, 80 atypical nevi, 40 melanoma), 768×560 at 20×. Expert **asymmetry (0/1/2), colours (6-set), network, dots/globules, streaks, regression, blue-white veil**, lesion masks | Univ. Porto / Hosp. Pedro Hispano (Mendonça 2013), for CAD research | Single centre | Label is the *clinical* diagnosis; histology exists for only 41/200 images (33/40 melanomas). **No border (0–8) score**, so a full ground-truth TDS is impossible | Official Dropbox link is **dead**. Mirrors exist (Kaggle, Zenodo, GitHub) but the terms say "research and educational purposes… redistribution… not allowed" | **CONDITIONAL. User decision** (see §6). It is the only source of expert asymmetry and colour scores, so success criterion S4 depends on it |
-| **derm7pt** (SFU) | 1,011 cases, clinical and dermoscopic images, 7-point checklist criteria, diagnosis, management, official train (413) / valid (203) / test (395) split | Kawahara 2019, for multi-task CAD | Atlas cases (Argenziano), specialist | Expert criteria labels. No diameter, no asymmetry, no colour count | Free, but **needs registration via a Google form** (https://forms.gle/iPnCEVkUKYwWYALh9). **CC BY-NC-ND 4.0** (no derivatives: fine for a local demo; overlays must not be redistributed) | **CONDITIONAL. User action** (see §6). Adds ground truth for structures and a 7-point checklist comparison |
+| **PH2** | 200 dermoscopic images (80 common nevi, 80 atypical nevi, 40 melanoma), 768×560 at 20×. Expert **asymmetry (0/1/2), colours (6-set), network, dots/globules, streaks, regression, blue-white veil**, lesion masks | Univ. Porto / Hosp. Pedro Hispano (Mendonça 2013), for CAD research | Single centre | Label is the *clinical* diagnosis; histology exists for 41/200 images (33/40 melanomas, 8/80 atypical nevi). **No border (0–8) score**, so a full ground-truth TDS is impossible | Official Dropbox link is dead. **User approved an unofficial mirror on 2026-10-01**: images + masks from Zenodo record 17498821 (200 + 200, IDs all match), annotations from GitHub `vikaschouhan/PH2-dataset/PH2_dataset.txt`. Terms are "research and educational purposes… redistribution not allowed", so the data stays local and is never committed or redistributed | **USE** (local only). Validates our asymmetry and colour measurements (S4) |
+| **derm7pt** (SFU) | 1,011 cases, clinical and dermoscopic images, 7-point checklist criteria, diagnosis, management, official train (413) / valid (203) / test (395) split | Kawahara 2019, for multi-task CAD | Atlas cases (Argenziano), specialist | Expert criteria labels. No diameter, no asymmetry, no colour count | Free, but **needs registration via a Google form** (https://forms.gle/iPnCEVkUKYwWYALh9). **CC BY-NC-ND 4.0** (no derivatives: fine for a local demo; overlays must not be redistributed) | **DROP** (user decision 2026-10-01). Not needed for this iteration |
 | ISIC 2018 Task 1 | 2,594 lesion masks | Segmentation challenge | ISIC Archive | Expert masks | 11.2 GB images | **DROP.** The HAM10000 masks are enough for segmentation |
 | ISIC 2024 hidden test | 500k+ crops | Kaggle leaderboard | n/a | n/a | **Not released** (ground-truth CSV returns 404) | **DROP.** Our holdout must come from train, grouped by patient |
 
@@ -49,8 +49,9 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
   - Weak benign labels carry a small risk of unbiopsied melanomas, and we judge this
     acceptable. It also means "benign" here means "not suspicious enough to biopsy",
     so the benign class is easy and AUC will look optimistic.
-  - Evaluation should also report **melanoma vs strongly-labelled benign** (675
-    crops, mostly atypical and other nevi). That is the clinically hard comparison.
+  - Evaluation should also report **melanoma vs strongly-labelled benign**: 675
+    crops have a subtype, minus 114 indeterminate = **561**, mostly atypical and
+    other nevi. That is the clinically hard comparison.
 - **Indeterminate.** 114 crops (64 atypical melanocytic neoplasm, 11 AIMP, 39 actinic
   keratosis) have `malignant = 0`. They are **excluded from the primary analysis**
   because they are ambiguous.
@@ -118,6 +119,18 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
     outputs (AUC 0.65 / 0.69 for malignancy when flipped). They are allowed **only in
     the T4 benchmark**, never in the explainable ABCD model.
 
+### PH2 (expert annotations; `dermoscopy_profile.json` → `ph2`)
+- **Asymmetry 2 (fully asymmetric):** 33/40 melanomas, 18/80 atypical nevi, 1/80
+  common nevi.
+- **Colour count:** mean 3.15 in melanoma vs 1.86 in atypical and 1.61 in common nevi.
+- **Expert criterion alone, melanoma vs all nevi:** AUC is **0.859 for asymmetry** and
+  **0.870 for colour count**. On dermoscopy with expert scoring, A and C clearly
+  discriminate. That contrasts with the reversed TBP asymmetry proxy (§3, SLICE-3D)
+  and is a key teaching contrast between modality and scorer.
+- **Structures:** atypical network 39/40 melanomas vs 77/80 atypical nevi, so it
+  separates nevus types more than melanoma from atypical nevus. Blue-white veil
+  30/40 vs 6/80. Regression 21/40 vs 4/80. Streaks 13/40 vs 16/80.
+
 ### HAM10000
 - 10,015 images, 7,470 lesions, 4 source collections. Age is missing for 57 images
   (median 50). There is a mask for every image, which supports pixel-level ABCD
@@ -143,8 +156,8 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
    Reason: crops are about 131 px across 15 mm.
 3. **New candidate feature family: patient-relative ("ugly duckling") features.**
    They are known at decision time in TBP and are a recognised clinical sign.
-4. **S4 (feature-extraction validity) depends on obtaining PH2.** Without it, S4 is
-   limited to the D-structure detectors (ISIC 2018 Task 2) plus clinician visual review.
+4. **S4 (feature-extraction validity) uses PH2** (obtained 2026-10-01 from a mirror,
+   user-approved) for asymmetry and colour, and ISIC 2018 Task 2 for structures.
    B has no ground truth anywhere.
 5. **Published TDS benchmarks for S1:**
    - Nachbar 1994, n=172: sensitivity 92.8 / specificity 90.3 at >5.45.
@@ -159,8 +172,8 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
 | Gap | Impact | Revisit at |
 |---|---|---|
 | No public border (0–8) ground truth | The B score can't be validated directly | Stages 3, 5 (clinician review) |
-| PH2 access (licence vs dead official link) | S4 for asymmetry and colour | **User decision now** |
-| derm7pt needs user registration | Optional extra structure ground truth | **User decision now** |
+| PH2 obtained from an unofficial mirror (user-approved) | Licence: local use only, never redistribute; small (n=200, 40 melanoma) | Stage 6: the demo must not ship PH2 images publicly |
+| derm7pt dropped | No 7-point checklist comparison this iteration | Next iteration |
 | Weak benign labels (SLICE-3D) and follow-up nevi (HAM10000) | Optimistic AUC | Stage 5: strong-label-only analysis |
 | Enriched prevalence (HAM10000) vs screening (SLICE-3D) | PPV and NNE not transferable | Stage 5: re-weight to base rate |
 | No patient ID in HAM10000 | Residual leakage across lesions | Stage 4 (note in limitations) |
@@ -172,13 +185,13 @@ web review dated 2026-10-01; the sources are cited inline. Raw data lives in
 | Version | Date | Change | Why |
 |---|---|---|---|
 | 1.0 | 2026-10-01 | Initial data understanding | First pass |
+| 1.1 | 2026-10-01 | PH2 → USE (mirror, local only) + PH2 profile; derm7pt → DROP | User decisions at Stage 2 data-access checkpoint |
 
 ## Exit-gate self-check
 - [x] **Each task has a data source and a credible target.**
-  - T1: HAM10000 masks + Task 2 structure masks (asymmetry and colour wait on PH2).
+  - T1: HAM10000 masks + Task 2 structure masks + PH2 expert asymmetry and colours.
   - T2 and T3: SLICE-3D (histo melanoma) and HAM10000 (histo melanoma).
   - T4: same data, pixels and all metadata.
   - T5 and T6: same labelled sets.
-- [x] **Cost/benefit decision recorded for each source** (§1: USE ×3, CONDITIONAL ×2,
-  DROP ×2).
+- [x] **Cost/benefit decision recorded for each source** (§1: USE ×4, DROP ×3).
 - [x] **Coverage and reliability gaps written down for Evaluation** (§6).
